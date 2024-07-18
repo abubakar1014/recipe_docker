@@ -20,4 +20,4 @@ EXPOSE 8000
 ENV DJANGO_SETTINGS_MODULE=testing.settings
 
 # Run the application with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "testing.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "testing.wsgi:application"]
