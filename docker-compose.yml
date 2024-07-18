@@ -5,4 +5,4 @@ services:
     build: .
     ports:
       - "8000:8000"
-    command: gunicorn --bind 44.203.67.145:8000 testing.wsgi:application
+    command: gunicorn --bind 0.0.0.0:8000 testing.wsgi:application
