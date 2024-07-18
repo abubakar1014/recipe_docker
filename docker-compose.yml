@@ -6,3 +6,5 @@ services:
     ports:
       - "8000:8000"
     command: gunicorn --bind 0.0.0.0:8000 testing.wsgi:application
+    environment:
+      - DJANGO_SETTINGS_MODULE=testing.settings

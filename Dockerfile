@@ -6,9 +6,10 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY . /app
-    
-# upgrade pip before install all requirements
+
+# Upgrade pip before installing all requirements
 RUN pip install --upgrade pip
+
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
@@ -18,6 +19,5 @@ EXPOSE 8000
 # Define environment variable
 ENV DJANGO_SETTINGS_MODULE=testing.settings
 
-# Run app.py when the container launches
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run the application with Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "testing.wsgi:application"]
