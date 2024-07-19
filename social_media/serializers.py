@@ -6,5 +6,5 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ["name", "category", "founder", "description"]
+        fields = ["id", "name", "category", "founder", "description"]
         depth = 1
